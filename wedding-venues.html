@@ -1,0 +1,1382 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Места за сватбата ни</title>
+<style>
+:root {
+  --ink:#272922;
+  --muted:#6d7167;
+  --cream:#fbf8f1;
+  --paper:#fffdf9;
+  --green:#566b4b;
+  --rose:#b96f68;
+  --line:#e8e2d7;
+  --gold:#c49b58
+}
+
+* {
+  box-sizing:border-box
+}
+
+body {
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif
+}
+
+header {
+  background:linear-gradient(120deg,#38483a,#687b5a);
+  color:white;
+  padding:56px max(24px,calc((100vw - 1180px)/2)) 46px
+}
+
+header .eyebrow {
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-size:.75rem;
+  color:#e8d9b7
+}
+
+h1,h2,h3,p {
+  margin-top:0
+}
+
+h1 {
+  font:clamp(2.25rem,5vw,4rem)/1.08 Georgia,serif;
+  max-width:760px;
+  margin:12px 0
+}
+
+header p {
+  max-width:760px;
+  color:#eff0e8;
+  margin-bottom:0
+}
+
+.wrap {
+  max-width:1180px;
+  margin:auto;
+  padding:0 22px
+}
+
+.toolbar {
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+  padding:24px 0
+}
+
+.toolbar input,.toolbar select {
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:12px 14px;
+  background:white;
+  color:var(--ink);
+  font:inherit
+}
+
+.toolbar input {
+  flex:1;
+  min-width:220px
+}
+
+.toolbar button,.fav-btn {
+  border:0;
+  border-radius:999px;
+  padding:11px 16px;
+  background:var(--green);
+  color:white;
+  font:600 .9rem inherit;
+  cursor:pointer
+}
+
+.toolbar button {
+  font-weight:650
+}
+
+.toolbar button.secondary {
+  background:#eee9df;
+  color:var(--ink)
+}
+
+.count {
+  color:var(--muted);
+  font-size:.9rem;
+  margin-left:auto
+}
+
+.intro {
+  display:grid;
+  grid-template-columns:1.35fr 1fr;
+  gap:24px;
+  margin:6px 0 25px
+}
+
+.note {
+  background:#f1ece1;
+  border-left:3px solid var(--gold);
+  padding:16px 18px;
+  border-radius:0 12px 12px 0;
+  color:#4d5047;
+  font-size:.92rem
+}
+
+.section-title {
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  margin:22px 0 14px
+}
+
+.section-title h2 {
+  font:2rem Georgia,serif;
+  margin:0
+}
+
+.section-title span {
+  color:var(--muted);
+  font-size:.9rem
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:20px;
+  padding-bottom:55px
+}
+
+.card {
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 8px 28px #382b1610;
+  display:flex;
+  flex-direction:column
+}
+
+.card-top {
+  padding:20px 22px 16px;
+  display:flex;
+  justify-content:space-between;
+  gap:12px
+}
+
+.tag {
+  font-size:.72rem;
+  font-weight:700;
+  color:var(--green);
+  background:#edf1e9;
+  border-radius:999px;
+  padding:5px 10px;
+  display:inline-block;
+  margin-bottom:9px
+}
+
+.card h3 {
+  font:1.55rem/1.2 Georgia,serif;
+  margin:0 0 5px
+}
+
+.location {
+  color:var(--muted);
+  font-size:.9rem
+}
+
+.fav-btn {
+  background:#f5eee8;
+  color:#93534c;
+  border:1px solid #eadbd3;
+  white-space:nowrap;
+  height:40px
+}
+
+.fav-btn.active {
+  background:#a44f48;
+  color:white;
+  border-color:#a44f48
+}
+
+.facts {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  padding:0 22px 16px
+}
+
+.fact {
+  border-top:1px solid var(--line);
+  padding-top:10px
+}
+
+.fact strong {
+  display:block;
+  font-size:.88rem
+}
+
+.fact small {
+  color:var(--muted);
+  font-size:.76rem
+}
+
+.desc {
+  padding:0 22px 15px;
+  color:#55594f;
+  font-size:.92rem
+}
+
+.review {
+  margin:0 22px 14px;
+  padding:12px 14px;
+  border-left:3px solid var(--gold);
+  background:#faf5e9;
+  border-radius:0 10px 10px 0;
+  font-size:.84rem;
+  color:#55594f
+}
+
+.review b {
+  display:block;
+  font-size:.75rem;
+  text-transform:uppercase;
+  letter-spacing:.07em;
+  color:#766641;
+  margin-bottom:4px
+}
+
+.review p {
+  margin:0
+}
+
+.contacts {
+  margin:0 22px 16px;
+  padding:12px 14px;
+  background:#f7f4ed;
+  border-radius:12px;
+  font-size:.88rem
+}
+
+.contacts b {
+  display:block;
+  font-size:.75rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--muted);
+  margin-bottom:5px
+}
+
+.contacts a,.sources a {
+  color:#426044;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px
+}
+
+.map {
+  padding:0 22px
+}
+
+.map iframe {
+  width:100%;
+  height:190px;
+  border:0;
+  border-radius:12px;
+  background:#e8e5dc
+}
+
+.map-link {
+  display:inline-block;
+  margin:8px 0 0;
+  color:var(--green);
+  font-size:.87rem;
+  font-weight:650
+}
+
+.sources {
+  padding:11px 22px 19px;
+  color:var(--muted);
+  font-size:.78rem;
+  margin-top:auto
+}
+
+.sources a {
+  margin-right:10px
+}
+
+.empty {
+  grid-column:1/-1;
+  padding:36px;
+  text-align:center;
+  color:var(--muted);
+  background:white;
+  border-radius:14px
+}
+
+.fav-section {
+  display:none;
+  margin:0 0 26px;
+  padding:18px;
+  background:#f4eee7;
+  border-radius:16px
+}
+
+.fav-section.show {
+  display:block
+}
+
+.fav-section h2 {
+  font:1.5rem Georgia,serif;
+  margin:0 0 8px
+}
+
+.fav-list {
+  display:flex;
+  gap:9px;
+  flex-wrap:wrap
+}
+
+.fav-chip {
+  background:white;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  font-size:.88rem
+}
+
+.footer {
+  border-top:1px solid var(--line);
+  padding:22px 0 38px;
+  color:var(--muted);
+  font-size:.82rem
+}
+
+.hide {
+  display:none!important
+}
+
+@media(max-width:760px) {
+  .grid {
+  grid-template-columns:1fr
+}
+
+.intro {
+  grid-template-columns:1fr
+}
+
+.count {
+  margin-left:0;
+  width:100%
+}
+
+.facts {
+  gap:5px
+}
+
+.card-top {
+  padding:18px
+}
+
+.map iframe {
+  height:170px
+}
+
+}
+</style>
+</head>
+<body>
+  <header>
+    <div class="eyebrow">Пътят между трите ни града</div>
+    <h1>Места за сватбата ни</h1>
+    <p>Разширен подбор за празненство от около 90–100 души — ресторанти, хотели и комплекси в София, Враца и района на Велико Търново. Не всички публикуват сватбен капацитет; включени са и места за директно запитване.</p>
+  </header>
+  <main class="wrap">
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Търси по място или град…" aria-label="Търси">
+      <select id="region" aria-label="Филтър по район">
+        <option value="all">Всички райони</option>
+        <option value="sofia">София</option>
+        <option value="vratsa">Враца</option>
+        <option value="tarnovo">Велико Търново</option>
+      </select>
+      <button id="onlyFav" class="secondary">♡ Само фаворити</button>
+      <span class="count" id="count">
+      </span>
+    </div>
+    <div class="intro">
+      <div>
+        <h2 style="font:1.65rem Georgia,serif;margin-bottom:7px">Как да четем подбора</h2>
+        <p style="color:var(--muted);margin:0">Най-удобният компромис за гостите от трите града вероятно е районът на Велико Търново: на изток за Враца, на запад за София, с хотелски капацитет за нощувки. Включих и местни варианти за по-лесна логистика.</p>
+      </div>
+      <aside class="note">
+      <b>Важно за разстоянията:</b> стойностите са ориентировъчни километри по обичаен автомобилен маршрут от центъра на съответния град. Проверете навигацията и трафика за конкретната дата. Капацитетът и свободните дати трябва да се потвърдят директно с мястото.</aside>
+    </div>
+    <section class="fav-section" id="favSection">
+      <h2>Вашите фаворити</h2>
+      <div class="fav-list" id="favList">
+      </div>
+    </section>
+    <div class="section-title">
+      <h2>Предложения</h2>
+      <span>Натиснете ♡, за да запазите място · мненията са обобщение на налични публични оценки</span>
+    </div>
+    <section class="grid" id="venues">
+      <article class="card" data-id="yantra" data-region="tarnovo" data-name="Гранд Хотел Янтра Велико Търново ресторант панорама хотел" data-fav="false">
+        <div class="card-top">
+          <div>
+            <span class="tag">Силен избор · Велико Търново</span>
+            <h3>Гранд Хотел Янтра</h3>
+            <div class="location">Велико Търново · център</div>
+          </div>
+          <button class="fav-btn" aria-label="Добави Гранд Хотел Янтра във фаворити">♡ Запази</button>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <strong>до 240 места</strong>
+            <small>ресторант по официален сайт</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 220 км</strong>
+            <small>от София</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 170 км</strong>
+            <small>от Враца</small>
+          </div>
+        </div>
+        <div class="facts" style="padding-top:0">
+          <div class="fact">
+            <strong>≈ 10 км</strong>
+            <small>от Велико Търново център</small>
+          </div>
+          <div class="fact">
+            <strong>Хотел</strong>
+            <small>настаняване на място</small>
+          </div>
+          <div class="fact">
+            <strong>Градски</strong>
+            <small>тераса с гледка</small>
+          </div>
+        </div>
+        <p class="desc">Панорамна зала с голям резерв над вашия брой гости, тераса и собствено настаняване. Удобно, ако искате да съберете тържество и нощувки в една локация.</p>
+        <div class="review">
+          <b>Мнения на посетители</b>
+          <p>Мнения: в сватбения каталог е посочена оценка 4,4/5 от 1 472 Google отзива. Това е обща оценка за хотела, не само за сватбени събития.</p>
+        </div>
+        <div class="contacts">
+          <b>Контакт</b>Телефон: <a href="tel:+35962600607">+359 62 600 607</a> · Имейл: <a href="mailto:office@yantrabg.com">office@yantrabg.com</a>
+        </div>
+        <div class="map">
+          <iframe loading="lazy" title="Карта Гранд Хотел Янтра" src="https://maps.google.com/maps?q=Grand%20Hotel%20Yantra%20Veliko%20Tarnovo&t=&z=14&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+          <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Grand+Hotel+Yantra+Veliko+Tarnovo">Отвори мястото в Google Maps ↗</a>
+        </div>
+        <div class="sources">Източници: <a href="https://www.yantrabg.com/events/weddings" target="_blank" rel="noopener">сватби и капацитет</a>
+          <a href="https://www.yantrabg.com/contacts" target="_blank" rel="noopener">контакти</a>
+        </div>
+      </article>
+      <article class="card" data-id="grandvt" data-region="tarnovo" data-name="Гранд Хотел Велико Търново Белла Виста" data-fav="false">
+        <div class="card-top">
+          <div>
+            <span class="tag">Голям хотелски комплекс</span>
+            <h3>Гранд Хотел Велико Търново</h3>
+            <div class="location">Велико Търново · ул. Александър Пенчев 2</div>
+          </div>
+          <button class="fav-btn" aria-label="Добави Гранд Хотел Велико Търново във фаворити">♡ Запази</button>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <strong>220 места</strong>
+            <small>ресторант Bella Vista</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 220 км</strong>
+            <small>от София</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 170 км</strong>
+            <small>от Враца</small>
+          </div>
+        </div>
+        <div class="facts" style="padding-top:0">
+          <div class="fact">
+            <strong>≈ 3 км</strong>
+            <small>от центъра на Търново</small>
+          </div>
+          <div class="fact">
+            <strong>Хотел + СПА</strong>
+            <small>много стаи</small>
+          </div>
+          <div class="fact">
+            <strong>Панорама</strong>
+            <small>ресторант и зали</small>
+          </div>
+        </div>
+        <p class="desc">Подходящ за 90–100 души с простор за дансинг и избор на зали. Добра логистика за гости, които ще останат да нощуват; проверете коя зала е налична за сватбена подредба.</p>
+        <div class="review">
+          <b>Мнения на посетители</b>
+          <p>Мнения: в каталог за сватбени места е посочена оценка 3,2/5 от 1 316 Google отзива; източникът отбелязва, че значителна част са стари от предишен собственик. Проверете най-новите отзиви преди оглед.</p>
+        </div>
+        <div class="contacts">
+          <b>Контакт</b>Телефон: <a href="tel:+359878505505">+359 87 850 5505</a> · Имейл: <a href="mailto:reservations@grandhotelvt.com">reservations@grandhotelvt.com</a>
+        </div>
+        <div class="map">
+          <iframe loading="lazy" title="Карта Гранд Хотел Велико Търново" src="https://maps.google.com/maps?q=Grand%20Hotel%20Veliko%20Tarnovo&t=&z=14&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+          <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Grand+Hotel+Veliko+Tarnovo">Отвори мястото в Google Maps ↗</a>
+        </div>
+        <div class="sources">Източници: <a href="https://www.grandhotelvt.com/" target="_blank" rel="noopener">официален сайт, капацитет и контакти</a>
+        </div>
+      </article>
+      <article class="card" data-id="raya" data-region="tarnovo" data-name="RAYA Garden Рая Гардън Велико Търново" data-fav="false">
+        <div class="card-top">
+          <div>
+            <span class="tag">Градина и панорама</span>
+            <h3>RAYA Garden</h3>
+            <div class="location">Велико Търново · хълм Света гора</div>
+          </div>
+          <button class="fav-btn" aria-label="Добави RAYA Garden във фаворити">♡ Запази</button>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <strong>до 270 души</strong>
+            <small>вътрешно + градина</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 220 км</strong>
+            <small>от София</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 170 км</strong>
+            <small>от Враца</small>
+          </div>
+        </div>
+        <div class="facts" style="padding-top:0">
+          <div class="fact">
+            <strong>≈ 3 км</strong>
+            <small>от центъра на Търново</small>
+          </div>
+          <div class="fact">
+            <strong>180 + 90</strong>
+            <small>салон + градина</small>
+          </div>
+          <div class="fact">
+            <strong>Сватбени услуги</strong>
+            <small>ритуал, DJ, декорация</small>
+          </div>
+        </div>
+        <p class="desc">Панорамен ресторант със закрит салон и градина. За 90–100 души може да се планира вътрешно или комбинирано събитие; уточнете сезонния вариант и резервен план при дъжд.</p>
+        <div class="review">
+          <b>Мнения на посетители</b>
+          <p>Мнения: сватбен каталог посочва 4,5/5 от 362 Google отзива. Посетителските описания изтъкват панорамата и градината.</p>
+        </div>
+        <div class="contacts">
+          <b>Контакт</b>Телефон: <a href="tel:+359896100100">+359 89 610 0100</a> · Имейл: <a href="mailto:office@svetagora.bg">office@svetagora.bg</a>
+        </div>
+        <div class="map">
+          <iframe loading="lazy" title="Карта RAYA Garden" src="https://maps.google.com/maps?q=Raya%20Garden%20Veliko%20Tarnovo&t=&z=14&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+          <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Raya+Garden+Veliko+Tarnovo">Отвори мястото в Google Maps ↗</a>
+        </div>
+        <div class="sources">Източници: <a href="https://velikoturnovo.info/places/raya-garden-fish-beef-restaurant/" target="_blank" rel="noopener">капацитет и описание</a>
+        </div>
+      </article>
+      <article class="card" data-id="asenevtsi" data-region="tarnovo" data-name="Парк Хотел Асеневци сватба Велико Търново" data-fav="false">
+        <div class="card-top">
+          <div>
+            <span class="tag">Хотел + градина</span>
+            <h3>Парк Хотел Асеневци</h3>
+            <div class="location">Велико Търново · ул. Опълченска 77</div>
+          </div>
+          <button class="fav-btn" aria-label="Добави Парк Хотел Асеневци във фаворити">♡ Запази</button>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <strong>около 100 вътре</strong>
+            <small>до 120 на открито*</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 220 км</strong>
+            <small>от София</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 170 км</strong>
+            <small>от Враца</small>
+          </div>
+        </div>
+        <div class="facts" style="padding-top:0">
+          <div class="fact">
+            <strong>≈ 2 км</strong>
+            <small>от центъра на Търново</small>
+          </div>
+          <div class="fact">
+            <strong>86 легла</strong>
+            <small>по регистър на общината</small>
+          </div>
+          <div class="fact">
+            <strong>Басейн</strong>
+            <small>сватба на открито</small>
+          </div>
+        </div>
+        <p class="desc">Компактна хотелска опция с градина и басейн. Добре пасва на размера ви, но за 100 гости закритата подредба трябва да се потвърди изрично с екипа.</p>
+        <div class="review">
+          <b>Мнения на посетители</b>
+          <p>Мнения: сватбен каталог посочва 4,7/5 от 996 Google отзива; отзивите са за хотела като цяло.</p>
+        </div>
+        <div class="contacts">
+          <b>Контакт</b>Телефон: <a href="tel:+35962538888">+359 62 538 888</a> · <a href="tel:+359892250259">+359 892 250 259</a> · Имейл: <a href="mailto:marketing@asenevtsi.bg">marketing@asenevtsi.bg</a>
+        </div>
+        <div class="map">
+          <iframe loading="lazy" title="Карта Парк Хотел Асеневци" src="https://maps.google.com/maps?q=Park%20Hotel%20Asenevtsi%20Veliko%20Tarnovo&t=&z=14&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+          <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Park+Hotel+Asenevtsi+Veliko+Tarnovo">Отвори мястото в Google Maps ↗</a>
+        </div>
+        <div class="sources">Източници: <a href="https://mnogoznaiko.com/ресторанти-за-сватба-велико-търново/" target="_blank" rel="noopener">сватбен капацитет*</a>
+          <a href="https://www.veliko-tarnovo.bg/bg/registar-na-mesta-za-nastanyavane/hoteli" target="_blank" rel="noopener">регистър на общината</a>
+        </div>
+      </article>
+      <article class="card" data-id="vili" data-region="vratsa" data-name="Ресторант Вили Враца сватба градина" data-fav="false">
+        <div class="card-top">
+          <div>
+            <span class="tag">Локален вариант · Враца</span>
+            <h3>Ресторант „Вили“</h3>
+            <div class="location">Враца · ул. „Панайот Волов“ 2</div>
+          </div>
+          <button class="fav-btn" aria-label="Добави Ресторант Вили във фаворити">♡ Запази</button>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <strong>110 вътре</strong>
+            <small>градина до 200*</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 110 км</strong>
+            <small>от София</small>
+          </div>
+          <div class="fact">
+            <strong>В града</strong>
+            <small>от Враца</small>
+          </div>
+        </div>
+        <div class="facts" style="padding-top:0">
+          <div class="fact">
+            <strong>≈ 170 км</strong>
+            <small>от Велико Търново</small>
+          </div>
+          <div class="fact">
+            <strong>Градина</strong>
+            <small>външна зона</small>
+          </div>
+          <div class="fact">
+            <strong>Градски</strong>
+            <small>без хотел на място</small>
+          </div>
+        </div>
+        <p class="desc">Практичен избор, ако искате празненството да е във Враца. Има салон с капацитет над 100 места и лятна градина; договорете конкретна зала, дансинг и нощувки в близки хотели.</p>
+        <div class="review">
+          <b>Мнения на посетители</b>
+          <p>Мнения: местен каталог посочва подходящи салон и градина за събития. Не открих надеждна, актуална публична оценка само за сватбени тържества.</p>
+        </div>
+        <div class="contacts">
+          <b>Контакт</b>Телефон: <a href="tel:+359882935844">+359 88 293 5844</a> · Имейл: <a href="mailto:slavininov.ninov@gmail.com">slavininov.ninov@gmail.com</a>
+        </div>
+        <div class="map">
+          <iframe loading="lazy" title="Карта Ресторант Вили Враца" src="https://maps.google.com/maps?q=Restorant%20Vili%20Vratsa&t=&z=15&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+          <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Restorant+Vili+Vratsa">Отвори мястото в Google Maps ↗</a>
+        </div>
+        <div class="sources">Източници: <a href="https://restorant-vili.com/contact-us/" target="_blank" rel="noopener">официални контакти</a>
+          <a href="https://business-europe.bg/ресторант-%E2%80%9Eвили%E2%80%9C-враца" target="_blank" rel="noopener">капацитет*</a>
+        </div>
+      </article>
+      <article class="card" data-id="casa" data-region="sofia" data-name="Casa Boyana София сватбен ресторант градина" data-fav="false">
+        <div class="card-top">
+          <div>
+            <span class="tag">Локален вариант · София</span>
+            <h3>Casa Boyana</h3>
+            <div class="location">София · кв. Бояна</div>
+          </div>
+          <button class="fav-btn" aria-label="Добави Casa Boyana във фаворити">♡ Запази</button>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <strong>до 100 седящи</strong>
+            <small>основен салон</small>
+          </div>
+          <div class="fact">
+            <strong>В София</strong>
+            <small>от София</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 110 км</strong>
+            <small>от Враца</small>
+          </div>
+        </div>
+        <div class="facts" style="padding-top:0">
+          <div class="fact">
+            <strong>≈ 220 км</strong>
+            <small>от Велико Търново</small>
+          </div>
+          <div class="fact">
+            <strong>Градина</strong>
+            <small>welcome drink/ритуал</small>
+          </div>
+          <div class="fact">
+            <strong>Паркинг</strong>
+            <small>на място</small>
+          </div>
+        </div>
+        <p class="desc">Бутикова градска сватба със салон, градина и паркинг. Точно на границата за вашия брой гости — поискайте схема на масите с дансинг за 100 души преди да резервирате.</p>
+        <div class="review">
+          <b>Мнения на посетители</b>
+          <p>Мнения: на официалния сайт са представени условията за събития, но не е публикувана независима агрегирана оценка. Прегледайте най-новите Google мнения при оглед.</p>
+        </div>
+        <div class="contacts">
+          <b>Контакт</b>Телефон: <a href="tel:+359885449499">+359 885 449 499</a> · Имейл: <a href="mailto:office@casaboyana-restaurant.com">office@casaboyana-restaurant.com</a>
+        </div>
+        <div class="map">
+          <iframe loading="lazy" title="Карта Casa Boyana" src="https://maps.google.com/maps?q=Casa%20Boyana%20Sofia&t=&z=14&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+          <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Casa+Boyana+Sofia">Отвори мястото в Google Maps ↗</a>
+        </div>
+        <div class="sources">Източници: <a href="https://casaboyana-restaurant.com/svatbi/" target="_blank" rel="noopener">сватбен капацитет и телефон</a>
+        </div>
+      </article>
+      <article class="card" data-id="marinela" data-region="sofia" data-name="Хотел Маринела София сватба зала Силует" data-fav="false">
+        <div class="card-top">
+          <div>
+            <span class="tag">Хотелски вариант · София</span>
+            <h3>Хотел Маринела · зала „Силует“</h3>
+            <div class="location">София · бул. „Джеймс Баучер“ 100</div>
+          </div>
+          <button class="fav-btn" aria-label="Добави Хотел Маринела във фаворити">♡ Запази</button>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <strong>до 100 гости</strong>
+            <small>зала „Силует“</small>
+          </div>
+          <div class="fact">
+            <strong>В София</strong>
+            <small>от София</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 110 км</strong>
+            <small>от Враца</small>
+          </div>
+        </div>
+        <div class="facts" style="padding-top:0">
+          <div class="fact">
+            <strong>≈ 220 км</strong>
+            <small>от Велико Търново</small>
+          </div>
+          <div class="fact">
+            <strong>Хотел</strong>
+            <small>настаняване на място</small>
+          </div>
+          <div class="fact">
+            <strong>Градина</strong>
+            <small>изнесен ритуал</small>
+          </div>
+        </div>
+        <p class="desc">Удобен градски избор с хотелско настаняване, сватбен пакет и японска градина за ритуал. Зала „Силует“ е с капацитет до 100 — уточнете дансинга и дали капацитетът включва всички доставчици.</p>
+        <div class="review">
+          <b>Мнения на посетители</b>
+          <p>Мнения: не намерих надежден отделен рейтинг за сватбени събития. Онлайн оценките за хотела не са равнозначни на оценка за сватбения екип.</p>
+        </div>
+        <div class="contacts">
+          <b>Контакт</b>Телефон: <a href="tel:+35929692202">+359 2 969 2202</a> · Имейл: <a href="mailto:sales@hotel-marinela.com">sales@hotel-marinela.com</a>
+        </div>
+        <div class="map">
+          <iframe loading="lazy" title="Карта Хотел Маринела" src="https://maps.google.com/maps?q=Hotel%20Marinela%20Sofia&t=&z=14&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+          <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Hotel+Marinela+Sofia">Отвори мястото в Google Maps ↗</a>
+        </div>
+        <div class="sources">Източници: <a href="https://victoriagroup.bg/our-hotels/marinela-sofia/weddings/" target="_blank" rel="noopener">сватбени зали и контакти</a>
+        </div>
+      </article>
+      <article class="card" data-id="chaika" data-region="vratsa" data-name="Хотел-ресторан Чайка Враца · местност Вратцата" data-fav="false">
+        <div class="card-top">
+          <div>
+            <span class="tag">Допълнителен вариант · Враца</span>
+            <h3>Хотел-ресторан Чайка</h3>
+            <div class="location">Враца · местност Вратцата</div>
+          </div>
+          <button class="fav-btn" aria-label="Добави Хотел-ресторан Чайка във фаворити">♡ Запази</button>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <strong>Ресторант 150 места; градина 250; VIP тераса 20</strong>
+            <small>ориентир — проверете актуално</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 110 км</strong>
+            <small>от София</small>
+          </div>
+          <div class="fact">
+            <strong>В града</strong>
+            <small>от Враца</small>
+          </div>
+        </div>
+        <div class="facts" style="padding-top:0">
+          <div class="fact">
+            <strong>≈ 170 км</strong>
+            <small>от Велико Търново</small>
+          </div>
+          <div class="fact">
+            <strong>За запитване</strong>
+            <small>частно събитие / сватба</small>
+          </div>
+          <div class="fact">
+            <strong>Карта</strong>
+            <small>маршрут и адрес</small>
+          </div>
+        </div>
+        <p class="desc">Хотелски комплекс с ресторант, градина и панорамна VIP тераса. Официалният сайт посочва, че ресторантът е подходящ за сватби и семейни тържества.</p>
+        <div class="review">
+          <b>Мнения на посетители</b>
+          <p>4.3/5 · приблизително 268 Google отзива за ресторанта; гостите хвалят природната гледка, атмосферата и храната. В някои мнения се споменава, че обслужването може да варира. <a href="https://www.oink.bg/biz/chayka_restorant" target="_blank" rel="noopener">Източник ↗</a>
+          </p>
+        </div>
+        <div class="contacts">
+          <b>Контакт</b>Телефон: <a href="tel:+35992622367">+359 92 62 23 67</a> · Имейл: <a href="mailto:hotel@chaikahotel.bg">hotel@chaikahotel.bg</a>
+        </div>
+        <div class="map">
+          <iframe loading="lazy" title="Карта Хотел-ресторан Чайка" src="https://maps.google.com/maps?q=Hotel%20Chaika%20Vratsa&t=&z=14&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+          <a class="map-link" target="_blank" rel="noopener" href="https://chaikahotel.bg/contacts/">Отвори мястото / контакт ↗</a>
+        </div>
+        <div class="sources">Източници: <a href="https://chaikahotel.bg/restaurant/" target="_blank" rel="noopener">обект / информация</a>
+          <a href="https://chaikahotel.bg/contacts/" target="_blank" rel="noopener">контакти</a>
+        </div>
+      </article>
+      <article class="card" data-id="hemus" data-region="vratsa" data-name="Хотел-ресторант Хемус Враца · пл. „Христо Ботев“ 1" data-fav="false">
+        <div class="card-top">
+          <div>
+            <span class="tag">Допълнителен вариант · Враца</span>
+            <h3>Хотел-ресторант Хемус</h3>
+            <div class="location">Враца · пл. „Христо Ботев“ 1</div>
+          </div>
+          <button class="fav-btn" aria-label="Добави Хотел-ресторант Хемус във фаворити">♡ Запази</button>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <strong>Ресторант 180 места; тераса 80; градина 30</strong>
+            <small>ориентир — проверете актуално</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 110 км</strong>
+            <small>от София</small>
+          </div>
+          <div class="fact">
+            <strong>В града</strong>
+            <small>от Враца</small>
+          </div>
+        </div>
+        <div class="facts" style="padding-top:0">
+          <div class="fact">
+            <strong>≈ 170 км</strong>
+            <small>от Велико Търново</small>
+          </div>
+          <div class="fact">
+            <strong>За запитване</strong>
+            <small>частно събитие / сватба</small>
+          </div>
+          <div class="fact">
+            <strong>Карта</strong>
+            <small>маршрут и адрес</small>
+          </div>
+        </div>
+        <p class="desc">Централна локация с голям ресторант, панорамна тераса и хотелски стаи — удобна логистика за гостите от Враца и пристигащите от други градове.</p>
+        <div class="review">
+          <b>Мнения на посетители</b>
+          <p>Google: около 3.9/5 от 105 мнения за ресторанта. Гостите често споменават панорамата, уютната тераса и любезното обслужване. За хотела Booking дава около 7.5/10; това е отделна оценка. <a href="https://www.oink.bg/biz/restorant_hemus" target="_blank" rel="noopener">Източник ↗</a>
+          </p>
+        </div>
+        <div class="contacts">
+          <b>Контакт</b>Телефон: <a href="tel:+35992624150">+359 92 62 41 50</a> · Имейл: <a href="mailto:restaurant@hotelhemus.com">restaurant@hotelhemus.com</a>
+        </div>
+        <div class="map">
+          <iframe loading="lazy" title="Карта Хотел-ресторант Хемус" src="https://maps.google.com/maps?q=Hotel%20Hemus%20Vratsa&t=&z=14&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+          <a class="map-link" target="_blank" rel="noopener" href="https://hotelhemus.com/restaurant-bars/">Отвори мястото / контакт ↗</a>
+        </div>
+        <div class="sources">Източници: <a href="https://hotelhemus.com/restaurant-bars/" target="_blank" rel="noopener">обект / информация</a>
+          <a href="https://hotelhemus.com/restaurant-bars/" target="_blank" rel="noopener">контакти</a>
+        </div>
+      </article>
+      <article class="card" data-id="nashentsi" data-region="vratsa" data-name="Механа „Нашенци“ Враца" data-fav="false">
+        <div class="card-top">
+          <div>
+            <span class="tag">Допълнителен вариант · Враца</span>
+            <h3>Механа „Нашенци“</h3>
+            <div class="location">Враца</div>
+          </div>
+          <button class="fav-btn" aria-label="Добави Механа „Нашенци“ във фаворити">♡ Запази</button>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <strong>Около 120 места в зала; градина около 100*</strong>
+            <small>ориентир — проверете актуално</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 110 км</strong>
+            <small>от София</small>
+          </div>
+          <div class="fact">
+            <strong>В града</strong>
+            <small>от Враца</small>
+          </div>
+        </div>
+        <div class="facts" style="padding-top:0">
+          <div class="fact">
+            <strong>≈ 170 км</strong>
+            <small>от Велико Търново</small>
+          </div>
+          <div class="fact">
+            <strong>За запитване</strong>
+            <small>частно събитие / сватба</small>
+          </div>
+          <div class="fact">
+            <strong>Карта</strong>
+            <small>маршрут и адрес</small>
+          </div>
+        </div>
+        <p class="desc">Традиционна механа с голяма зала и лятна градина; посочена като място за сватби и семейни празници. Обадете се за актуална организация и условия.</p>
+        <div class="review">
+          <b>Мнения на посетители</b>
+          <p>Мнения: агрегаторите показват приблизително 4.2/5 от близо 900 Google оценки. Често се изтъкват традиционната атмосфера и кухнята; прегледайте актуалните коментари за обслужването. <a href="https://zovnews.com/novini/nai-predpochitani-zavedenia-vratsa/" target="_blank" rel="noopener">Източник ↗</a>
+          </p>
+        </div>
+        <div class="contacts">
+        <b>Контакт</b>Телефон: Не е потвърден публично · Имейл: Не е публикуван надежден имейл</div>
+        <div class="map">
+          <iframe loading="lazy" title="Карта Механа „Нашенци“" src="https://maps.google.com/maps?q=Mehana%20Nashentsi%20Vratsa&t=&z=14&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+          <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Mehana+Nashentsi+Vratsa">Отвори мястото / контакт ↗</a>
+        </div>
+        <div class="sources">Източници: <a href="https://www.google.com/maps/search/?api=1&query=Mehana+Nashentsi+Vratsa" target="_blank" rel="noopener">обект / информация</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Mehana+Nashentsi+Vratsa" target="_blank" rel="noopener">контакти</a>
+        </div>
+      </article>
+      <article class="card" data-id="vratzata" data-region="vratsa" data-name="Ресторант „Вратцата“ Враца · Врачански Балкан" data-fav="false">
+        <div class="card-top">
+          <div>
+            <span class="tag">Допълнителен вариант · Враца</span>
+            <h3>Ресторант „Вратцата“</h3>
+            <div class="location">Враца · Врачански Балкан</div>
+          </div>
+          <button class="fav-btn" aria-label="Добави Ресторант „Вратцата“ във фаворити">♡ Запази</button>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <strong>Капацитетът не е публикуван</strong>
+            <small>ориентир — проверете актуално</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 110 км</strong>
+            <small>от София</small>
+          </div>
+          <div class="fact">
+            <strong>В града</strong>
+            <small>от Враца</small>
+          </div>
+        </div>
+        <div class="facts" style="padding-top:0">
+          <div class="fact">
+            <strong>≈ 170 км</strong>
+            <small>от Велико Търново</small>
+          </div>
+          <div class="fact">
+            <strong>За запитване</strong>
+            <small>частно събитие / сватба</small>
+          </div>
+          <div class="fact">
+            <strong>Карта</strong>
+            <small>маршрут и адрес</small>
+          </div>
+        </div>
+        <p class="desc">Живописна локация в планината, подходяща за празник с усещане за природа. Проверете възможностите за частно събитие, достъп и транспорт за гостите.</p>
+        <div class="review">
+          <b>Мнения на посетители</b>
+          <p>Мнения: местна класация отчита около 4.5/5 от 178 мнения; други каталози показват сходна оценка. Посетителите харесват природната локация. <a href="https://zovnews.com/novini/nai-predpochitani-zavedenia-vratsa/" target="_blank" rel="noopener">Източник ↗</a>
+          </p>
+        </div>
+        <div class="contacts">
+        <b>Контакт</b>Телефон: Проверете през Google Maps · Имейл: Не е публикуван надежден имейл</div>
+        <div class="map">
+          <iframe loading="lazy" title="Карта Ресторант „Вратцата“" src="https://maps.google.com/maps?q=Restaurant%20Vratzata%20Vratsa&t=&z=14&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+          <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Restaurant+Vratzata+Vratsa">Отвори мястото / контакт ↗</a>
+        </div>
+        <div class="sources">Източници: <a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Vratzata+Vratsa" target="_blank" rel="noopener">обект / информация</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Restaurant+Vratzata+Vratsa" target="_blank" rel="noopener">контакти</a>
+        </div>
+      </article>
+      <article class="card" data-id="toscana" data-region="vratsa" data-name="La Toscana Враца" data-fav="false">
+        <div class="card-top">
+          <div>
+            <span class="tag">Допълнителен вариант · Враца</span>
+            <h3>La Toscana</h3>
+            <div class="location">Враца</div>
+          </div>
+          <button class="fav-btn" aria-label="Добави La Toscana във фаворити">♡ Запази</button>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <strong>Капацитетът не е публикуван</strong>
+            <small>ориентир — проверете актуално</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 110 км</strong>
+            <small>от София</small>
+          </div>
+          <div class="fact">
+            <strong>В града</strong>
+            <small>от Враца</small>
+          </div>
+        </div>
+        <div class="facts" style="padding-top:0">
+          <div class="fact">
+            <strong>≈ 170 км</strong>
+            <small>от Велико Търново</small>
+          </div>
+          <div class="fact">
+            <strong>За запитване</strong>
+            <small>частно събитие / сватба</small>
+          </div>
+          <div class="fact">
+            <strong>Карта</strong>
+            <small>маршрут и адрес</small>
+          </div>
+        </div>
+        <p class="desc">Ресторант с високи оценки и италианска кухня. Не намерих публично потвърждение за сватбен капацитет, затова го включвам като място за запитване за по-интимен формат или частно наемане.</p>
+        <div class="review">
+          <b>Мнения на посетители</b>
+          <p>Мнения: около 4.7/5 от близо 300 оценки според местна класация; положително се коментират кухнята и атмосферата. Попитайте дали затварят ресторанта за частно събитие. <a href="https://zovnews.com/novini/nai-predpochitani-zavedenia-vratsa/" target="_blank" rel="noopener">Източник ↗</a>
+          </p>
+        </div>
+        <div class="contacts">
+        <b>Контакт</b>Телефон: Проверете през Google Maps · Имейл: Не е публикуван надежден имейл</div>
+        <div class="map">
+          <iframe loading="lazy" title="Карта La Toscana" src="https://maps.google.com/maps?q=La%20Toscana%20Vratsa&t=&z=14&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+          <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=La+Toscana+Vratsa">Отвори мястото / контакт ↗</a>
+        </div>
+        <div class="sources">Източници: <a href="https://www.google.com/maps/search/?api=1&query=La+Toscana+Vratsa" target="_blank" rel="noopener">обект / информация</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=La+Toscana+Vratsa" target="_blank" rel="noopener">контакти</a>
+        </div>
+      </article>
+      <article class="card" data-id="arbanassi" data-region="tarnovo" data-name="Арбанаси Палас с. Арбанаси · около 5 км от Велико Търново" data-fav="false">
+        <div class="card-top">
+          <div>
+            <span class="tag">Допълнителен вариант · Велико Търново</span>
+            <h3>Арбанаси Палас</h3>
+            <div class="location">с. Арбанаси · около 5 км от Велико Търново</div>
+          </div>
+          <button class="fav-btn" aria-label="Добави Арбанаси Палас във фаворити">♡ Запази</button>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <strong>90 места в ресторант + тераса; тераса за събития до 160</strong>
+            <small>ориентир — проверете актуално</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 220 км</strong>
+            <small>от София</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 170 км</strong>
+            <small>от Враца</small>
+          </div>
+        </div>
+        <div class="facts" style="padding-top:0">
+          <div class="fact">
+            <strong>В района</strong>
+            <small>от Велико Търново</small>
+          </div>
+          <div class="fact">
+            <strong>За запитване</strong>
+            <small>частно събитие / сватба</small>
+          </div>
+          <div class="fact">
+            <strong>Карта</strong>
+            <small>маршрут и адрес</small>
+          </div>
+        </div>
+        <p class="desc">Хотел със СПА и панорамен ресторант. Важно: официалният сайт посочва общо 90 седящи места в ресторанта и терасата — за 90–100 гости проверете възможност за събитие с отделна конфигурация.</p>
+        <div class="review">
+          <b>Мнения на посетители</b>
+          <p>Мнения: в сватбен каталог се цитира оценка около 4.3/5 от над 700 Google отзива. Гостите често коментират панорамата и хотелската обстановка. <a href="https://mnogoznaiko.com/ресторанти-за-сватба-велико-търново/" target="_blank" rel="noopener">Източник ↗</a>
+          </p>
+        </div>
+        <div class="contacts">
+          <b>Контакт</b>Телефон: <a href="tel:+359887812169">+359 88 781 2169</a> · Имейл: <a href="mailto:reservations@arbanassipalace.bg">reservations@arbanassipalace.bg</a>
+        </div>
+        <div class="map">
+          <iframe loading="lazy" title="Карта Арбанаси Палас" src="https://maps.google.com/maps?q=Arbanassi%20Palace%20Bulgaria&t=&z=14&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+          <a class="map-link" target="_blank" rel="noopener" href="https://arbanassipalace.bg/">Отвори мястото / контакт ↗</a>
+        </div>
+        <div class="sources">Източници: <a href="https://arbanassipalace.bg/" target="_blank" rel="noopener">обект / информация</a>
+          <a href="https://arbanassipalace.bg/" target="_blank" rel="noopener">контакти</a>
+        </div>
+      </article>
+      <article class="card" data-id="hashove" data-region="tarnovo" data-name="Ресторант „Хъшове“ Велико Търново · пл. „Независимост“ 3" data-fav="false">
+        <div class="card-top">
+          <div>
+            <span class="tag">Допълнителен вариант · Велико Търново</span>
+            <h3>Ресторант „Хъшове“</h3>
+            <div class="location">Велико Търново · пл. „Независимост“ 3</div>
+          </div>
+          <button class="fav-btn" aria-label="Добави Ресторант „Хъшове“ във фаворити">♡ Запази</button>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <strong>Около 150 места (каталожна информация)</strong>
+            <small>ориентир — проверете актуално</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 220 км</strong>
+            <small>от София</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 170 км</strong>
+            <small>от Враца</small>
+          </div>
+        </div>
+        <div class="facts" style="padding-top:0">
+          <div class="fact">
+            <strong>В района</strong>
+            <small>от Велико Търново</small>
+          </div>
+          <div class="fact">
+            <strong>За запитване</strong>
+            <small>частно събитие / сватба</small>
+          </div>
+          <div class="fact">
+            <strong>Карта</strong>
+            <small>маршрут и адрес</small>
+          </div>
+        </div>
+        <p class="desc">Ресторант в центъра, който обявява специални събития и сватби. Добър вариант за запитване, ако предпочитате градски ресторант пред хотелски комплекс.</p>
+        <div class="review">
+          <b>Мнения на посетители</b>
+          <p>Мнения: каталогът показва над 15 000 посетителски прегледа на страницата; не открих единна актуална оценка, която надеждно да е за сватбени събития. <a href="https://live.restaurant.bg/bul/restoranti/restorant-mehana-hashove-veliko-tarnovo-4522" target="_blank" rel="noopener">Източник ↗</a>
+          </p>
+        </div>
+        <div class="contacts">
+        <b>Контакт</b>Телефон: <a href="tel:+359885705015">+359 88 570 5015</a> · Имейл: Не е публикуван надежден имейл</div>
+        <div class="map">
+          <iframe loading="lazy" title="Карта Ресторант „Хъшове“" src="https://maps.google.com/maps?q=Hashove%20Veliko%20Tarnovo&t=&z=14&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+          <a class="map-link" target="_blank" rel="noopener" href="https://live.restaurant.bg/bul/restoranti/restorant-mehana-hashove-veliko-tarnovo-4522">Отвори мястото / контакт ↗</a>
+        </div>
+        <div class="sources">Източници: <a href="https://live.restaurant.bg/bul/restoranti/restorant-mehana-hashove-veliko-tarnovo-4522" target="_blank" rel="noopener">обект / информация</a>
+          <a href="https://live.restaurant.bg/bul/restoranti/restorant-mehana-hashove-veliko-tarnovo-4522" target="_blank" rel="noopener">контакти</a>
+        </div>
+      </article>
+      <article class="card" data-id="beduin" data-region="tarnovo" data-name="Бедуин Бар район Севлиево / Габрово" data-fav="false">
+        <div class="card-top">
+          <div>
+            <span class="tag">Допълнителен вариант · Велико Търново</span>
+            <h3>Бедуин Бар</h3>
+            <div class="location">район Севлиево / Габрово</div>
+          </div>
+          <button class="fav-btn" aria-label="Добави Бедуин Бар във фаворити">♡ Запази</button>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <strong>Около 150 места*</strong>
+            <small>ориентир — проверете актуално</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 220 км</strong>
+            <small>от София</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 170 км</strong>
+            <small>от Враца</small>
+          </div>
+        </div>
+        <div class="facts" style="padding-top:0">
+          <div class="fact">
+            <strong>В района</strong>
+            <small>от Велико Търново</small>
+          </div>
+          <div class="fact">
+            <strong>За запитване</strong>
+            <small>частно събитие / сватба</small>
+          </div>
+          <div class="fact">
+            <strong>Карта</strong>
+            <small>маршрут и адрес</small>
+          </div>
+        </div>
+        <p class="desc">Вариант извън голям град, с открито пространство и възможности за ритуал на открито. Локацията е по-равностойна като пътуване за гостите от Търново и София, но по-далеч от Враца.</p>
+        <div class="review">
+          <b>Мнения на посетители</b>
+          <p>Мнения: сватбен каталог посочва около 4.6/5 от 376 Google отзива. Коментарите ценят природната обстановка и събитията на открито. <a href="https://mnogoznaiko.com/ресторанти-за-сватба-велико-търново/" target="_blank" rel="noopener">Източник ↗</a>
+          </p>
+        </div>
+        <div class="contacts">
+        <b>Контакт</b>Телефон: Проверете през Google Maps · Имейл: Не е публикуван надежден имейл</div>
+        <div class="map">
+          <iframe loading="lazy" title="Карта Бедуин Бар" src="https://maps.google.com/maps?q=Beduin%20Bar%20Bulgaria&t=&z=14&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+          <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Beduin+Bar+Bulgaria">Отвори мястото / контакт ↗</a>
+        </div>
+        <div class="sources">Източници: <a href="https://www.google.com/maps/search/?api=1&query=Beduin+Bar+Bulgaria" target="_blank" rel="noopener">обект / информация</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Beduin+Bar+Bulgaria" target="_blank" rel="noopener">контакти</a>
+        </div>
+      </article>
+      <article class="card" data-id="bryasta" data-region="tarnovo" data-name="Комплекс Бряста около 10 км от Велико Търново · пътя към Габрово" data-fav="false">
+        <div class="card-top">
+          <div>
+            <span class="tag">Допълнителен вариант · Велико Търново</span>
+            <h3>Комплекс Бряста</h3>
+            <div class="location">около 10 км от Велико Търново · пътя към Габрово</div>
+          </div>
+          <button class="fav-btn" aria-label="Добави Комплекс Бряста във фаворити">♡ Запази</button>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <strong>120 закрито / 150 открито*</strong>
+            <small>ориентир — проверете актуално</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 220 км</strong>
+            <small>от София</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 170 км</strong>
+            <small>от Враца</small>
+          </div>
+        </div>
+        <div class="facts" style="padding-top:0">
+          <div class="fact">
+            <strong>В района</strong>
+            <small>от Велико Търново</small>
+          </div>
+          <div class="fact">
+            <strong>За запитване</strong>
+            <small>частно събитие / сватба</small>
+          </div>
+          <div class="fact">
+            <strong>Карта</strong>
+            <small>маршрут и адрес</small>
+          </div>
+        </div>
+        <p class="desc">Комплекс сред зеленина с вътрешен ресторант и открити площи — подходящ за празник с градина, ако е осигурен транспорт до града.</p>
+        <div class="review">
+          <b>Мнения на посетители</b>
+          <p>Мнения: каталогът посочва около 3.8/5 от 252 Google отзива. Рейтингът е по-умерен — прегледайте скорошните оценки и направете оглед. <a href="https://mnogoznaiko.com/ресторанти-за-сватба-велико-търново/" target="_blank" rel="noopener">Източник ↗</a>
+          </p>
+        </div>
+        <div class="contacts">
+        <b>Контакт</b>Телефон: Проверете през Google Maps · Имейл: Не е публикуван надежден имейл</div>
+        <div class="map">
+          <iframe loading="lazy" title="Карта Комплекс Бряста" src="https://maps.google.com/maps?q=Complex%20Bryasta%20Veliko%20Tarnovo&t=&z=14&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+          <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Complex+Bryasta+Veliko+Tarnovo">Отвори мястото / контакт ↗</a>
+        </div>
+        <div class="sources">Източници: <a href="https://www.google.com/maps/search/?api=1&query=Complex+Bryasta+Veliko+Tarnovo" target="_blank" rel="noopener">обект / информация</a>
+          <a href="https://www.google.com/maps/search/?api=1&query=Complex+Bryasta+Veliko+Tarnovo" target="_blank" rel="noopener">контакти</a>
+        </div>
+      </article>
+      <article class="card" data-id="residence" data-region="tarnovo" data-name="Резиденция Болярка с. Арбанаси · ул. „Димитър Папазов“ 2" data-fav="false">
+        <div class="card-top">
+          <div>
+            <span class="tag">Допълнителен вариант · Велико Търново</span>
+            <h3>Резиденция Болярка</h3>
+            <div class="location">с. Арбанаси · ул. „Димитър Папазов“ 2</div>
+          </div>
+          <button class="fav-btn" aria-label="Добави Резиденция Болярка във фаворити">♡ Запази</button>
+        </div>
+        <div class="facts">
+          <div class="fact">
+            <strong>Капацитет 100 (официален сайт)</strong>
+            <small>ориентир — проверете актуално</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 220 км</strong>
+            <small>от София</small>
+          </div>
+          <div class="fact">
+            <strong>≈ 170 км</strong>
+            <small>от Враца</small>
+          </div>
+        </div>
+        <div class="facts" style="padding-top:0">
+          <div class="fact">
+            <strong>В района</strong>
+            <small>от Велико Търново</small>
+          </div>
+          <div class="fact">
+            <strong>За запитване</strong>
+            <small>частно събитие / сватба</small>
+          </div>
+          <div class="fact">
+            <strong>Карта</strong>
+            <small>маршрут и адрес</small>
+          </div>
+        </div>
+        <p class="desc">Ресторант и настаняване в Арбанаси; официалният сайт посочва капацитет 100. Подходящо е да попитате за схема на масите, дансинг и условия за външни доставчици.</p>
+        <div class="review">
+          <b>Мнения на посетители</b>
+          <p>Мнения: не намерих надежден обобщен публичен рейтинг, специфичен за ресторанта/събитията. Проверете най-новите Google мнения и поискайте оглед. <a href="https://residencebolyarka.com/restaurant" target="_blank" rel="noopener">Източник ↗</a>
+          </p>
+        </div>
+        <div class="contacts">
+          <b>Контакт</b>Телефон: <a href="tel:+359884268888">+359 88 426 8888</a> · Имейл: <a href="mailto:office@residencebolyarka.com">office@residencebolyarka.com</a>
+        </div>
+        <div class="map">
+          <iframe loading="lazy" title="Карта Резиденция Болярка" src="https://maps.google.com/maps?q=Residence%20Bolyarka%20Arbanasi&t=&z=14&ie=UTF8&iwloc=&output=embed">
+          </iframe>
+          <a class="map-link" target="_blank" rel="noopener" href="https://residencebolyarka.com/restaurant">Отвори мястото / контакт ↗</a>
+        </div>
+        <div class="sources">Източници: <a href="https://residencebolyarka.com/restaurant" target="_blank" rel="noopener">обект / информация</a>
+          <a href="https://residencebolyarka.com/restaurant" target="_blank" rel="noopener">контакти</a>
+        </div>
+      </article>
+    </section>
+    <footer class="footer">* Капацитетите, отбелязани със звездичка, идват от туристически/сватбени каталози, а не от актуален официален ценоразпис. Потвърдете на място текущия капацитет, меню, такси, час за музика, условия за външни доставчици и свободна дата. Разстоянията са ориентир, не гарантиран маршрут.</footer>
+  </main>
+<script>
+const cards=[...document.querySelectorAll('.card')],search=document.querySelector('#search'),region=document.querySelector('#region'),onlyFav=document.querySelector('#onlyFav'),count=document.querySelector('#count'),favSection=document.querySelector('#favSection'),favList=document.querySelector('#favList');
+let favorites=new Set(JSON.parse(localStorage.getItem('weddingVenueFavorites')||'[]')),favoritesOnly=false;
+function update(){let shown=0;
+cards.forEach(card=>{const matchText=(card.dataset.name+' '+card.innerText).toLocaleLowerCase('bg').includes(search.value.trim().toLocaleLowerCase('bg'));
+const matchRegion=region.value==='all'||card.dataset.region===region.value;
+const matchFav=!favoritesOnly||favorites.has(card.dataset.id);
+card.classList.toggle('hide',!(matchText&&matchRegion&&matchFav));
+if(matchText&&matchRegion&&matchFav)shown++;
+const btn=card.querySelector('.fav-btn');
+const active=favorites.has(card.dataset.id);
+card.dataset.fav=active;
+btn.classList.toggle('active',active);
+btn.innerHTML=active?'♥ Запазено':'♡ Запази';
+btn.setAttribute('aria-pressed',String(active));
+});
+count.textContent=`${shown} от ${cards.length} места`;
+favList.innerHTML='';
+favorites.forEach(id=>{const card=cards.find(c=>c.dataset.id===id);
+if(card){const chip=document.createElement('span');
+chip.className='fav-chip';
+chip.textContent=card.querySelector('h3').textContent;
+favList.append(chip)}});
+favSection.classList.toggle('show',favorites.size>0)}
+cards.forEach(card=>card.querySelector('.fav-btn').addEventListener('click',()=>{favorites.has(card.dataset.id)?favorites.delete(card.dataset.id):favorites.add(card.dataset.id);
+localStorage.setItem('weddingVenueFavorites',JSON.stringify([...favorites]));
+update()}));
+search.addEventListener('input',update);
+region.addEventListener('change',update);
+onlyFav.addEventListener('click',()=>{favoritesOnly=!favoritesOnly;
+onlyFav.classList.toggle('secondary',!favoritesOnly);
+onlyFav.textContent=favoritesOnly?'♥ Показваш фаворити':'♡ Само фаворити';
+update()});
+update();
+
+</script>
+</body></html>
